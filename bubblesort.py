@@ -26,6 +26,7 @@ print("Original array:", arr)
 sorted_arr = bubble_sort(arr)
 print("Sorted array:", sorted_arr)
 
+print("Exit bubble sort")
 
 #The loop inside should iterate from 0 to n - i - 1, not 0 - i - 1. The incorrect range caused no iterations to occur.
 

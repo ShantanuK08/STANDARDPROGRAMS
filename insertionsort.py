@@ -17,7 +17,7 @@ def insertion_sort(arr):
     return arr  # Return the sorted array
 
 # Test the insertion_sort function
-arr = [43, 24, 5, 6, 7, 89, 1]  # Define an array to be sorted
+arr =  [1,24,5,6,7,89,43] # Define an array to be sorted
 sorted_arr = insertion_sort(arr)  # Call insertion_sort to sort the array
 print("Sorted array:", sorted_arr)  # Output the sorted array
 

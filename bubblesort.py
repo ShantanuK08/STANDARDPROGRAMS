@@ -2,7 +2,7 @@ def bubble_sort(arr):
     print("Enter in bubble_sort sorting")
 
     n = len(arr)  # Get the length of the array
-    
+
     for i in range(n):
         swapped = False  # Track whether a swap happened in this iteration
 
@@ -17,7 +17,7 @@ def bubble_sort(arr):
         if not swapped:
             print("Array is already sorted.")
             break
-            
+
     return arr
 
 # Test Array

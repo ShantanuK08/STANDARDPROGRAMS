@@ -21,7 +21,7 @@ arr = [1, 24, 5, 6, 7, 89, 43]  # Define an array to be sorted
 sorted_arr = selection_sort(arr)  # Call selection_sort to sort the array
 print("Sorted array:", sorted_arr)  # Output the sorted array
 
-
+print("Exit selection sort")
 
 
 #Finding the Minimum: For each position in the array, the algorithm finds the minimum element in the unsorted portion and swaps it with the current position.
@@ -43,7 +43,6 @@ print("Sorted array:", sorted_arr)  # Output the sorted array
 #Efficient for Small Arrays: Though Selection Sort is inefficient for large datasets, it can be useful for small arrays or partially sorted data.
 
 #Simple Implementation: Selection Sort is easy to implement and understand, making it a good choice for educational purposes, despite its inefficiency for large datasets.
-
 
 
 

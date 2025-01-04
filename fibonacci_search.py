@@ -1,51 +1,61 @@
 print("Enter Fibonacci Search")
+print("Enter Fibonacci Search")
 
-# Fibonacci Search Function
 def fibonacci_search(arr, target):
     arr.sort()  # Ensure the array is sorted
-    print("Sorted array:", arr)  # Output the sorted array for reference
-
+    print("Sorted array:", arr)
     n = len(arr)
+
+    # Initialize Fibonacci numbers
     fib_m_2 = 0  # (m-2)'th Fibonacci number
     fib_m_1 = 1  # (m-1)'th Fibonacci number
     fib = fib_m_1 + fib_m_2  # m'th Fibonacci number
 
-    # Find the smallest Fibonacci number greater than or equal to the length of the array
+    # Generate the smallest Fibonacci number greater than or equal to n
     while fib < n:
         fib_m_2 = fib_m_1
         fib_m_1 = fib
         fib = fib_m_1 + fib_m_2
 
-    # Mark the range for searching
+    # Marks the eliminated range from the front
     offset = -1
 
-    # Perform the search using Fibonacci numbers
+    # While there are elements to be inspected
     while fib > 1:
-        i = min(offset + fib_m_2, n - 1)  # Calculate the index for the comparison
+        # Calculate the index to compare
+        i = min(offset + fib_m_2, n - 1)
 
-        if arr[i] == target:
-            return f"Found at index {i}"  # Return index if the target is found
-        elif arr[i] < target:
+        print(f"Comparing index {i}, value: {arr[i]}")
+
+        # If the target is greater than the value at index `i`,
+        # cut the subarray array from offset to `i`
+        if arr[i] < target:
             fib = fib_m_1
             fib_m_1 = fib_m_2
             fib_m_2 = fib - fib_m_1
             offset = i
-        else:
+        # If the target is smaller than the value at index `i`,
+        # cut the subarray after `i+1`
+        elif arr[i] > target:
             fib = fib_m_2
             fib_m_1 = fib_m_1 - fib_m_2
             fib_m_2 = fib - fib_m_1
+        # Element found, return the index
+        else:
+            return f"Found at index {i}"
 
-    # Check the last element
-    if fib_m_1 and arr[offset + 1] == target:
+    # Check the last element if necessary
+    if fib_m_1 and offset + 1 < n and arr[offset + 1] == target:
         return f"Found at index {offset + 1}"
 
-    return "Not Found"  # Return "Not Found" if the target is not in the array
+    # Element not found
+    return "Not Found"
 
-# Test the fibonacci_search function
-arr = [1, 24, 5, 6, 7, 89, 43]  # Define the array
-target = 3  # Define the element to search for
-result = fibonacci_search(arr, target)  # Call fibonacci_search to find the target
-print(result)  # Output the result
+# Test the Fibonacci Search function
+arr = [1, 24, 5, 6, 7, 89, 43]
+target = 3
+result = fibonacci_search(arr, target)
+print(result)
 
 print("Exit Fibonacci Search")
 

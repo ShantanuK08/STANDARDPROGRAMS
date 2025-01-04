@@ -49,3 +49,68 @@ result = binary_search(arr, target)  # Call binary_search to find the target
 print(result)  # Output the result
 
 print("Exit Binary Search")
+
+
+print("Enter Fibonacci Search")
+
+def fibonacci_search(arr, target):
+    arr.sort()  # Ensure the array is sorted
+    print("Sorted array:", arr)
+    n = len(arr)
+
+  
+    fib_m_2 = 0  
+    fib_m_1 = 1 
+    fib = fib_m_1 + fib_m_2  
+
+   
+    while fib < n:
+        fib_m_2 = fib_m_1
+        fib_m_1 = fib
+        fib = fib_m_1 + fib_m_2
+
+   
+    offset = -1
+
+   
+    while fib > 1:
+      
+        i = min(offset + fib_m_2, n - 1)
+
+        print(f"Comparing index {i}, value: {arr[i]}")
+
+        
+        if arr[i] < target:
+            fib = fib_m_1
+            fib_m_1 = fib_m_2
+            fib_m_2 = fib - fib_m_1
+            offset = i
+        
+        elif arr[i] > target:
+            fib = fib_m_2
+            fib_m_1 = fib_m_1 - fib_m_2
+            fib_m_2 = fib - fib_m_1
+       
+        else:
+            return f"Found at index {i}"
+
+   
+    if fib_m_1 and offset + 1 < n and arr[offset + 1] == target:
+        return f"Found at index {offset + 1}"
+
+  
+    return "Not Found"
+
+
+arr = [1, 24, 5, 6, 7, 89, 43]
+target = 7
+result = fibonacci_search(arr, target)
+print(result)
+
+print("Exit Fibonacci Search")
+
+
+
+
+
+

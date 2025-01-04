@@ -1,6 +1,24 @@
 print("Enter Practice")
 
+
 print("Enter in sequential search")
+
+def sequence_search(arr, target):
+    for index, element in enumerate(arr):
+        if element == target:
+            print("Found during search")
+            return f"Found at index {index}"
+    print("Not found during search")
+    return "Not Found"
+
+arr = [1, 24, 5, 6, 7, 89, 43]
+target = 7
+result = sequence_search(arr, target)
+print(result)
+print("Exit Sequential search")
+
+
+
 
 
 

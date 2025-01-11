@@ -35,7 +35,7 @@ price = 100.50
 print(price*tax)
 _ = 74.3
 print(price + _ )
-print(round(_,2)) #The function round(_, 2) rounds the value of _ to two decimal places.
+print(round(_,2))  #The function round(_, 2) rounds the value of _ to two decimal places.
 
 
 
